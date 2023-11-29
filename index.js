@@ -99,6 +99,14 @@ app.get('/inicio_admin', (req, res) => {
     });
 });
 
+app.get('/listado_productos', (req, res) => {
+    let titulo = '+Cotitas - Lista de productos';
+    res.render('listado_productos', {
+        "titulo": titulo
+    });
+});
+
+
 app.listen(9100, () => {
     console.log("Se está escuchando en el puerto 9100");
 });
