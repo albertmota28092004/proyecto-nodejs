@@ -1,0 +1,105 @@
+    <%- include('../partials/encabezado'); %>
+    
+    <h1><%=nombre   %></h1>
+
+    <main>
+        <section>
+            <img id="banner" src="../../static/img/logo_mascotitas.png" alt="banner_original">
+        </section>
+
+        <section>
+            <a href="#">
+                <img id="banner_cita" src="../images/banner_cita.png" alt="">
+            </a>
+        </section>
+
+        <section id="seccion_productos">
+                <h1 class="titulo_lista-productos">¡Productos más comprados!</h1>
+                <div id="contenedor__lista-productos" class="row">
+                    <div class="col-lg-6 contenedor__producto">
+                        <h3>Pañitos Humedos Familia Mascotas Petys</h3>
+                        <h3>$50.000</h3>
+                        <img src="../images/delimpieza/producto1.png" alt="" width="300px" height="300px">
+                        <button type="button" class="boton_comprar btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#myModal2">Comprar</button>
+                    </div>
+                    <div class="col-lg-6 contenedor__producto">
+                        <h3>Dentalife juguete de cuidado oral</h3>
+                        <h3>$2.000</h3>
+                        <img src="../images/delimpieza/producto2.png" alt="" width="300px" height="300px">
+                        <button type="button" class="boton_comprar btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#myModal2">Comprar</button>
+                    </div>
+                    <div class="contenedor__producto col-lg-6">
+                        <h3>Alimento Para Perro Pro Plan Veterinary</h3>
+                        <h3>$350.000</h3>
+                        <img src="../images/alimento/producto11.webp" alt="" width="300px" height="300px">
+                        <button type="button" class="boton_comprar btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#myModal2">Comprar</button>
+                    </div>
+                    <div class="contenedor__producto col-lg-6">
+                        <h3>Chunky Adulto Razas Pequeñas</h3>
+                        <h3>$70.000</h3>
+                        <img src="../images/alimento/producto16.webp" alt="" width="300px" height="300px">
+                        <button type="button" class="boton_comprar btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#myModal2">Comprar</button>
+                    </div>
+                </div>
+        </section>
+            
+        <section>
+            <h1 class="titulo_sobre_nosotros">Sobre nosotros</h1>
+            <h3 class="subtitulo_sobre_nosotros">Nuestro equipo de trabajo</h3>
+            <div id="contenedor__equipo" class="row">
+                <div class="equipo">
+                    <h4>Albert Mota</h4>
+                    <h5>Desarrollador de software</h5>
+                    <img src="../images/albert.png" alt="">
+                </div>
+                <div class="equipo">
+                    <h4>Andrés Mauricio Bedoya</h4>
+                    <h5>Desarrollador de software</h5>
+                    <img src="../images/mauricio.png" alt="">
+                </div>
+                <div class="equipo">
+                    <h4>Carlos Andres Holguín</h4>
+                    <h5>Desarrollador de software</h5>
+                    <img src="../images/carlos.png" alt="">
+                </div>
+            </div>
+        </section>  
+        <section class="contactanos-section">
+            <h1 class="titulo_contactanos" >Contáctanos</h1>
+            <div id="contenedor__contactanos" class="row">
+                <form class="col-lg-6">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Apellido">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Correo electrónico">
+                    </div>
+                    <div class="input-group">
+                        <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Escribe un mensaje aquí..."></textarea>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="input-group">
+                        <input id="boton_enviar_contactanos" type="submit" class="form-control btn btn-primary" placeholder="Enviar" onclick="event.preventDefault()">
+                    </div>
+                </form>
+                <ul class="list-group col-lg-4">
+                    <li class="list-group-item"><i class="bi bi-whatsapp"></i> +57 304 5318796</li>
+                    <li class="list-group-item"><i class="bi bi-instagram"></i> mas_cotitas</li>
+                    <li class="list-group-item"><i class="bi bi-facebook"> +Cotitas</i></li>
+                  </ul>
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer'); %>

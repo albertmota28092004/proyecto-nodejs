@@ -1,0 +1,118 @@
+<%- include('../partials/encabezado'); %>
+
+    <div>
+        <nav aria-label="breadcrumb" id="miga">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item">Productos</li>
+                <li class="breadcrumb-item active" aria-current="page">De limpieza</li>
+            </ol>
+        </nav>
+    </div>
+    <h1 class="titulo_lista-productos">Catálogo de productos de limpieza para mascotas</h1>
+
+    <div class="filter-sidebar">
+        <h2>Filtrar Productos</h2>
+        <label for="especie">Especie:</label>
+        <select id="especie">
+            <option value="todos">Todos</option>
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+        </select>
+
+        <label for="tamaño">Tamaño:</label>
+        <select id="tamaño">
+            <option value="todos">Todos</option>
+            <option value="pequeño">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+        </select>
+    </div>
+    <div class="row content">
+        <div class="producto_alimento col-md-3 producto gato perro pequeño mediano grande">
+            <h3>Pañitos Humedos Familia Mascotas Petys</h3>
+            <h3>$20.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto1.png" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto perro grande">
+            <h3>Dentalife Perro Grande 7 Uni 220 G</h3>
+            <h3>$30.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto2.png" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto gato mediano grande">
+            <h3>Pack de productos de limpieza</h3>
+            <h3>$100.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto3.png" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto perro gato pequeño mediano grande">
+            <h3>Shampoo Petys de 235 ml para Perros y Gatos</h3>
+            <h3>$20.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto4.jpg" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto gato pequeño mediano grande">
+            <h3>Shampoo Beeps Para Gatos </h3>
+            <h3>$43.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto5.jpg" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto gato perro pequeño mediano grande">
+            <h3>Clorhexin Shampoo Medicado</h3>
+            <h3>$31.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto6.jpg" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto gato perro pequeño mediano grande">
+            <h3>Petys Spray Eliminador de Olores</h3>
+            <h3>$10.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto7.jpg" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto perro pequeño mediano grande">
+            <h3>Destastik Cuidado Dental Perros</h3>
+            <h3>$35.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto8.jpg" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto perro pequeño mediano grande">
+            <h3>Petys Shampoo Limpieza y Suavidad Para Mascotas</h3>
+            <h3>$21.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto9.webp" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto gato perro pequeño mediano grande">
+            <h3>Toallitas de Limpieza para Mascotas</h3>
+            <h3>$5.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto10.webp" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 producto perro pequeño mediano grande">
+            <h3>Shampoo Insecticida 230mL</h3>
+            <h3>$50.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto11.png" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+        <div class="producto_alimento col-md-3 gato pequeño mediano grande">
+            <h3>PURINA® DENTALIFE® snacks de pollo para gatos</h3>
+            <h3>$30.000</h3>
+            <img class="imagen_alimento" src="../img/delimpieza/producto12.webp" alt="">
+            <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#myModal2">Comprar</button>
+        </div>
+    </div>
+
+    <%- include('../partials/footer'); %>

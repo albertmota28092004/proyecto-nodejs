@@ -1,0 +1,174 @@
+<%- include('../partials/encabezado'); %>
+<div>
+    <nav aria-label="breadcrumb" id="miga">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item">Productos</li>
+            <li class="breadcrumb-item active" aria-current="page">Alimento</li>
+        </ol>
+    </nav>
+</div>
+
+<h1 class="titulos_apartados">Catálogo de alimento para mascotas</h1>
+
+<div class="filter-sidebar">
+    <h2>Filtrar Productos</h2>
+    <label for="especie">Especie:</label>
+    <select id="especie">
+        <option value="todos">Todos</option>
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+    </select>
+
+    <label for="tamaño">Tamaño:</label>
+    <select id="tamaño">
+        <option value="todos">Todos</option>
+        <option value="pequeño">Pequeño</option>
+        <option value="mediano">Mediano</option>
+        <option value="grande">Grande</option>
+    </select>
+</div>
+<div class="row content">
+    <div class="producto_alimento col-md-3 producto gato mediano grande">
+        <h3>Alimento Seco Para Gato One 2kg</h3>
+        <h3>$90.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto1.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato grande">
+        <h3>Proplan Gato Adulto Purina Optiprebio</h3>
+        <h3>$160.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto2.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato mediano grande">
+        <h3>Alimento Seco Para Gato Felix Megamix - 1.5 Kg</h3>
+        <h3>$30.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto3.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato pequeño mediano grande">
+        <h3>Alimento Para Gato Monello Salmón - 1 Kg</h3>
+        <h3>$20.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto4.png" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro mediano grande">
+        <h3>Purina Dog Chow Perro Mediano y Grande</h3>
+        <h3>$150.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto5.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro pequeño">
+        <h3>Max Perro Pequeño Performance</h3>
+        <h3>$150.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto6.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro pequeño mediano">
+        <h3>Monello - Puppy Alimento Seco Para Cachorros</h3>
+        <h3>$50.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto7.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato pequeño">
+        <h3>Nutra Nuggets Mantenimiento Para Gato</h3>
+        <h3>$25.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto8.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro grande">
+        <h3>Canes Gold X 8 Kg Perro Grande</h3>
+        <h3>$40.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto9.png" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato pequeño mediano">
+        <h3>Donkat Gatitos x 500 gr Gatos Pequeños</h3>
+        <h3>$10.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto10.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro mediano grande">
+        <h3>Alimento Para Perro Pro Plan Veterinary</h3>
+        <h3>$350.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto11.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro pequeño">
+        <h3>Agility Gold Pequeños Cachorros</h3>
+        <h3>$130.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto12.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro grande">
+        <h3>Proplan Perro Adulto Raza Pequeña</h3>
+        <h3>$200.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto13.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro mediano grande">
+        <h3>Comida para perro Alpo Adultos</h3>
+        <h3>$130.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto14.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro pequeño">
+        <h3>Max Raza Pequeña Performance</h3>
+        <h3>$140.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto15.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro mediano grande">
+        <h3>Chunky Adulto Razas Pequeñas</h3>
+        <h3>$70.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto16.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto perro mediano grande">
+        <h3>Ringo + Pro - Alimento Seco para Adultos</h3>
+        <h3>$140.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto17.avif" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato grande">
+        <h3>Excellent - Adulto Maintenance Formula</h3>
+        <h3>$70.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto18.avif" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato mediano grande">
+        <h3>Excellent Gato Adulto Omega 3</h3>
+        <h3>$220.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto19.jpg" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+    <div class="producto_alimento col-md-3 producto gato grande">
+        <h3>Alimento Seco Para Gato Adulto Cat Chow 8kg</h3>
+        <h3>$80.000</h3>
+        <img class="imagen_alimento" src="../img/alimento/producto20.webp" alt="">
+        <button type="button" class="boton_comprar_alimento btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#myModal2">Comprar</button>
+    </div>
+</div>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,95 @@
+<%- include('../partials/encabezado'); %>
+
+    <div>
+        <nav aria-label="breadcrumb" id="miga">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Servicios</li>
+            </ol>
+        </nav>
+    </div>
+
+    <h1 class="titulos_apartados">Servicios</h1>
+
+    <div class="barra-navegacion">
+        <ul>
+            <li><a href="#salud">Salud</a></li>
+            <hr class="linea">
+            <li><a href="#estetica">Estética</a></li>
+            <hr class="linea">
+            <li><a href="#vacunacion">Vacunación</a></li>
+        </ul>
+    </div>
+    <div id="salud">
+        <h3 class="subtitulos_servicios">Salud</h3>
+        <div class="tarjetas" id="num_1">
+            <h4>Consulta general</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_2">
+            <h4>Cardiología</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_3">
+            <h4 style="margin-left: 15px;">Dentista</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="lista">
+            <ul>
+                <h6 class="mas_servicios">Más servicios: </h6>
+                <li><a href="citas.html">Cirugías</a></li>
+                <li><a href="citas.html">Ecografías</a></li>
+                <li><a href="citas.html">RX</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="estetica">
+        <h3 class="subtitulos_servicios">Estética</h3>
+        <div class="tarjetas" id="num_1">
+            <h4>Corte de uñas</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_2">
+            <h4>Corte de cabello</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_3">
+            <h4 style="margin-left: 15px;">Control de pulgas</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="lista">
+            <ul>
+                <h6 class="mas_servicios">Más servicios: </h6>
+                <li><a href="citas.html">Masajes relajantes</a></li>
+                <li><a href="citas.html">Limpieza de oídos</a></li>
+                <li><a href="citas.html">Baños</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="vacunacion">
+        <h3 class="subtitulos_servicios">Vacunación</h3>
+        <div class="tarjetas" id="num_1">
+            <h4>Moquillo canino</h4>
+            <a href="/citas" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_2">
+            <h4>Hepatitis canina crónica (HCC)</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="num_3">
+            <h4 style="margin-left: 15px;">Parvovirus</h4>
+            <a href="citas.html" class="btn btn-primary botones">Solicitar</a>
+        </div>
+        <div class="tarjetas" id="lista">
+            <ul>
+                <h6 class="mas_servicios">Más servicios: </h6>
+                <li><a href="citas.html">Leptospirosis</a></li>
+                <li><a href="citas.html">Antirrábica</a></li>
+                <li><a href="citas.html">Parainfluenza</a></li>
+                <li><a href="citas.html">Enfermedad de Lyme</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <%- include('../partials/footer'); %>

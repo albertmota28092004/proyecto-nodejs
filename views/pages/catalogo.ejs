@@ -1,0 +1,44 @@
+<%- include('../partials/encabezado'); %>
+
+<link rel="stylesheet" href="css/catalogue_style.css">
+
+<div id="header">
+    <h1 class="title">Products Catalogue</h1>
+    <button id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+      <img src="../img/carrito.png" alt="" width="50px" height="50px">
+    </button>
+  </div>
+
+  <div class="product-container">
+    
+  </div>
+
+  <nav class="pagination" aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" id="previous">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item" id="next">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="spinner" class="spinner-border text-light" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <div class="offcanvas offcanvas-end" id="demo">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title" style="margin-right: auto; color:black;">Shopping Car</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="productCar">
+        
+      </p>
+      <a href="login.html" id="buy-now-button" class="btn btn-secondary buy-now" type="button">Buy now</a>
+    </div>
+  </div>
+  <script src="js/catalogue.js"></script>
+
+<%- include('../partials/footer'); %>

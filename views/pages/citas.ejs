@@ -1,0 +1,160 @@
+<%- include('../partials/encabezado'); %>
+    <title>
+        <%=titulo %>
+    </title>
+
+
+    <h1 id="titulo_citas">Agendar Cita</h1>
+    <div id="pestañas">
+        <button id="pestaña1" onclick="mostrar(1)">Información del Cliente</button>
+        <button id="pestaña2" onclick="mostrar(2)">Información de la Mascota</button>
+        <button id="pestaña3" onclick="mostrar(3)">Información de la Cita</button>
+    </div>
+
+    <div id="formularios">
+        <div id="text1" class="text">
+            <form class="formulario-agendar col-lg-6">
+                <div class="mb-3 mt-3">
+                    <label for="nombre" class="label-citas form-label">Nombre(s):</label>
+                    <input type="text" class="form-control" id="nombres" placeholder="Ingresa tu(s) nombre(s)"
+                        name="nombres">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="apellidos" class="label-citas form-label">Apellido(s):</label>
+                    <input type="text" class="form-control" id="apellidos" placeholder="Ingresa tu(s) apellido(s)"
+                        name="apellidos">
+                </div>
+                <div>
+                    <label class="label-citas" for="tipodocumento">Tipo de documento:</label>
+                    <select class="select" id="tipodocumento" name="tipodocumento">
+                        <option value="CC">Cédula de Ciudadanía</option>
+                        <option value="CE">Cédula de Extranjería</option>
+                        <option value="TI">Tarjeta de Identidad</option>
+                        <option value="PP">Pasaporte</option>
+                        <option value="DNI">Documento Nacional de Identificación</option>
+                        <option value="NIT">Número de Identificación Tributaria</option>
+                        <option value="PEP">Permiso Especial de Permanencia</option>
+                        <option value="PPT">Permiso de Protección Temporal</option>
+                    </select>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="numerodocumento" class="label-citas form-label">Número de documento:</label>
+                    <input type="number" class="form-control" id="numerodocumento"
+                        placeholder="Ingresa tu número de documento" name="numerodocumento">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="fechanacimiento" class="label-citas form-label">Fecha de Nacimiento:</label>
+                    <input class="select" type="date" class="form-control" id="fechanacimiento"
+                        placeholder="Ingresa tu fecha de nacimiento" name="fechanacimiento">
+                </div>
+            </form>
+            <button class="boton" onclick="siguiente()">Siguiente</button>
+        </div>
+
+        <div id="text2" class="text">
+            <form class="formulario-agendar col-lg-6">
+                <div class="mb-3 mt-3">
+                    <label for="nombremascota" class="label-citas form-label">Nombre de la Mascota:</label>
+                    <input type="text" class="form-control" id="nombremascota"
+                        placeholder="Ingresa el nombre de tu mascota" name="nombremascota">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="fechanacimientomascota" class="label-citas form-label">Fecha de Nacimiento de la
+                        Mascota:</label>
+                    <input class="select" type="date" class="form-control" id="fechanacimientomascota"
+                        placeholder="Ingresa la fecha de nacimiento de tu mascota" name="fechanacimientomascota">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="especiemascota" class="label-citas form-label">Especie de la Mascota:</label>
+                    <input type="text" class="form-control" id="especiemascota"
+                        placeholder="Ingresa la especie de tu mascota" name="especiemascota">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="razamascota" class="label-citas form-label">Raza de la Mascota:</label>
+                    <input type="text" class="form-control" id="razamascota" placeholder="Ingresa la raza de tu mascota"
+                        name="razamascota">
+                </div>
+            </form>
+            <button class="boton" onclick="anterior()">Anterior</button>
+            <button class="boton" onclick="siguiente()">Siguiente</button>
+        </div>
+
+        <div id="text3" class="text">
+            <form class="formulario-agendar col-lg-6">
+                <div class="mb-3 mt-3">
+                    <label class="label-citas " for="sede">Sede:</label>
+                    <select class="select" id="sede" name="sede">
+                        <option value="itagui">Itagüí</option>
+                        <option value="medellin">Medellín</option>
+                        <option value="envigado">Envigado</option>
+                        <option value="robledo">Robledo</option>
+                    </select>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label class="label-citas " for="servicio">Servicio:</label>
+                    <select class="select" id="servicio" name="servicio">
+                        <optgroup label="Salud">
+                            <option value="consultageneral">Consulta general</option>
+                            <option value="cardiologia">Cardiología</option>
+                            <option value="dentista">Dentista</option>
+                            <option value="cirugias">Cirugías</option>
+                            <option value="ecografias">Ecografías</option>
+                            <option value="rx">RX</option>
+                        </optgroup>
+                        <optgroup label="Estética">
+                            <option value="cortecabello">Corte de Cabello</option>
+                            <option value="corteunas">Corte de Uñas</option>
+                            <option value="controlpulgas">Control de Pulgas</option>
+                            <option value="masajesrelajantes">Masajes Relajantes</option>
+                            <option value="limpiezaoidos">Limpieza de oídos</option>
+                            <option value="baños">Baños</option>
+                        </optgroup>
+                        <optgroup label="Vacunación">
+                            <option value="moquillocanino">CMoquillo canino</option>
+                            <option value="hcc">Hepatitis canina crónica (HCC)</option>
+                            <option value="parvovirus">Parvovirus</option>
+                            <option value="leptospirosis">Leptospirosis</option>
+                            <option value="antirrábica">Antirrábica</option>
+                            <option value="parainfluenza">Parainfluenza</option>
+                            <option value="enfermedadlyme">Enfermedad de Lyme</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label class="label-citas" for="dia">Día:</label>
+                    <input class="select" type="date" id="dia" name="dia" min="2023-07-11" max="2023-12-31"
+                        onchange="validarDia()">
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label class="label-citas" for="hora">Hora:</label>
+                    <select class="select" id="hora" name="hora">
+                        <!-- Opciones de horarios disponibles -->
+                        <option value="06:00">06:00 AM</option>
+                        <option value="07:30">07:30 AM</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:30">10:30 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:30">01:30 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:30">04:30 PM</option>
+                    </select>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label class="label-citas" for="profesional">Profesional:</label>
+                    <select class="select" id="profesional" name="profesional">
+                        <option value="albert_mota">Albert Mota</option>
+                        <option value="mauricio_bedoya">Mauricio Bedoya</option>
+                        <option value="carlos_holguin">Carlos Holguín</option>
+                    </select>
+                </div>
+            </form>
+            <button class="boton" onclick="anterior()">Anterior</button>
+            <button type="submit" class="boton" onclick="validarDatos()">Agendar Cita</button>
+        </div>
+    </div>
+
+
+    <%- include('../partials/footer'); %>
