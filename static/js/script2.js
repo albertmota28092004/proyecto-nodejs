@@ -38,11 +38,11 @@ function validarRegistro() {
 
 }
 
-document.getElementById
-("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
+/*document.getElementById
+("btn__iniciar-sesion").addEventListener("click", iniciarSesion);*/
 
-document.getElementById
-("btn__registrarse").addEventListener("click", register);
+/*document.getElementById
+("btn__registrarse").addEventListener("click", register);*/
 
 window.addEventListener("resize", anchoPagina)
 
@@ -71,8 +71,8 @@ function iniciarSesion(){
 
 function anchoPagina() {
     if (window.innerWidth > 850) {
-        caja_trasera_login.style.display = "block";
-        caja_trasera_register.style.display = "block";
+        // caja_trasera_login.style.display = "block";
+        // caja_trasera_register.style.display = "block";
     } else {
         caja_trasera_register.style.display = "block";
         caja_trasera_register.style.opacity = "1";
@@ -168,9 +168,9 @@ function toggleMostrarContrasenaRegistro() {
   }
   
   // Ocultar los iconos de ocultar al cargar la página
-  document.getElementById("iconoOcultarRegistro").style.display = "none";
+  /* document.getElementById("iconoOcultarRegistro").style.display = "none";
   document.getElementById("iconoOcultarConfirmar").style.display = "none";
-  document.getElementById("iconoOcultarInicio").style.display = "none";
+  document.getElementById("iconoOcultarInicio").style.display = "none";*/
 
   function validarContrasena() {
     var contrasenaRegistro = document.getElementById("contrasenaRegistro").value;

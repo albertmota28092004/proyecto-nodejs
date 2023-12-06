@@ -1,0 +1,34 @@
+<%- include('../partials/encabezado'); %>
+    <%- include('../partials/navbar'); %>
+
+        <style>
+            .mascomprados-image {
+                transition: transform .4s;
+                z-index: 2;
+            }
+
+            .mascomprados-image:hover {
+                transform: scale(1.5);
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        </style>
+
+        <div class="card"
+            style="display: flex; flex-direction: row; text-align: center; margin: 0 300px; height: 300px;">
+            <% mascomprados.forEach( pro=> { %>
+                <div class="card-body" style="width: 80px;">
+                    <img src="<%=pro.image%>" alt="<%=pro.title%>" width="100px" height="100px"
+                        class="mascomprados-image">
+                    <h5 style="margin-top: auto;">
+                        <%=pro.title%>
+                    </h5>
+                </div>
+                <%});%>
+        </div>
+
+        <%- include('../partials/footer'); %>

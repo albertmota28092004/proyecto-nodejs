@@ -73,17 +73,17 @@ function customAlert() {
 }
 
         
-fetch('base.html')
+/*fetch('base.html')
 .then(response => response.text())
 .then(data => {
     document.getElementById('base-container').innerHTML = data;
-});
+});*/
 
-fetch('base_admin.html')
+/*fetch('base_admin.html')
 .then(response => response.text())
 .then(data => {
     document.getElementById('base-container_admin').innerHTML = data;
-});
+});*/
 
 document.addEventListener("DOMContentLoaded", function () {
     const especieSelect = document.getElementById("especie");
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const productos = document.querySelectorAll(".producto");
 
     function filtrarProductos() {
-        const especieFiltro = especieSelect.value;
-        const tamañoFiltro = tamañoSelect.value;
+        /*const especieFiltro = especieSelect.value;
+        const tamañoFiltro = tamañoSelect.value;*/  
 
         productos.forEach(producto => {
             const especieProducto = producto.classList.contains(especieFiltro);
@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    especieSelect.addEventListener("change", filtrarProductos);
-    tamañoSelect.addEventListener("change", filtrarProductos);
+    // especieSelect.addEventListener("change", filtrarProductos);
+    // tamañoSelect.addEventListener("change", filtrarProductos);
 
     // Filtrar productos al cargar la página
     filtrarProductos();
@@ -213,8 +213,8 @@ function validarDatos() {
     }
   }
 
-  document.getElementById("text2").style.display = "none";
-  document.getElementById("text3").style.display = "none";
+  // document.getElementById("text2").style.display = "none";
+  // document.getElementById("text3").style.display = "none";
 
   function siguiente() {
     let text1 = document.getElementById("text1");
