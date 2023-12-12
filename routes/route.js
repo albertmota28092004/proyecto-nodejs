@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 router.get('/listardepartamentos', (req, res) => {
     res.render('listardepartamentos');
@@ -103,5 +105,7 @@ router.get('/landing', (req, res) => {
     })
    
 });
+
+mongoose.connect('mongodb+srv://albertmota28:5Y6Nhirv9eeQ7jlZ@clusteradso2557466.htke3tm.mongodb.net/')
 
 module.exports = router

@@ -22,6 +22,4 @@ app.listen(9100, () => {
     console.log("Se está escuchando en el puerto 9100");
 });
 
-/*mongoose.connect('mongodb+srv://albertmota28:5Y6Nhirv9eeQ7jlZ@clusteradso2557466.htke3tm.mongodb.net/', { useNewUrlParser: true }, () => {
-    console.log('Sí hay conexión a la DB');
-});*/
+
