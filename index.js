@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({extended: false})); 
+app.use(express.json())
 app.use(logger('dev'));
 
 const postRoute = require('./routes/route');

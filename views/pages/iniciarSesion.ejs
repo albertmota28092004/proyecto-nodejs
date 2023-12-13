@@ -40,12 +40,12 @@
                 <button class="entrar" type="submit" onclick="validarUsuario()" class="btn">Entrar</button>
             </form>
             <!--Registro-->
-            <form action="" class="formulario__register">
+            <form action="/newPersona" method="POST" class="formulario__register">
                 <h2>Registrarse</h2>
-                <input type="text" placeholder="Nombre completo" required id="nombre_completo">
-                <input type="text" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Usuario" required>
-                <input type="password" id="contrasenaRegistro" placeholder="Contraseña" required>
+                <input type="text" placeholder="Correo electrónico" required name="correoRegistro">
+                <input type="text" placeholder="Nombre completo" required id="nombre_completo" name="nombreRegistro">
+                <input type="text" placeholder="Usuario" required  name="usuarioRegistro">
+                <input type="password" id="contrasenaRegistro" placeholder="Contraseña" required name="contrasenaRegistro">
                 <button type="button"
                     style="position: absolute; display: inline; margin-top: -43px; margin-left: 270px; background-color: transparent; color: black;"
                     id="btnMostrarContrasenaRegistro" onclick="toggleMostrarContrasenaRegistro()">
@@ -60,11 +60,11 @@
                     <span id="iconoOcultarConfirmar" class="bi bi-eye-slash-fill"></span>
                 </button>
 
-                <button class="registrarse" onclick="validarRegistro()" class="btn">Registrarse</button>
+                <button type="submit" class="registrarse" class="btn">Registrarse</button>
             </form>
         </div>
     </div>
 </main>
 
 <script src="js/script.js"></script>
-<script src="js/script2.js"></script>
+<script src="js/inicio.js"></script>

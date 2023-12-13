@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const modelopersona = require('../models/persona.model');
+const mongoose = require("../config/database");
 
 router.get('/listardepartamentos', (req, res) => {
     res.render('listardepartamentos');
@@ -79,12 +80,12 @@ router.get('/catalogo', (req, res) => {
     });
 });
 -
-router.get('/inicio_admin', (req, res) => {
-    let titulo = '+Cotitas - Inicio';
-    res.render('inicio_admin', {
-        "titulo": titulo
+    router.get('/inicio_admin', (req, res) => {
+        let titulo = '+Cotitas - Inicio';
+        res.render('inicio_admin', {
+            "titulo": titulo
+        });
     });
-});
 
 router.get('/listado_productos', (req, res) => {
     let titulo = '+Cotitas - Lista de productos';
@@ -94,18 +95,54 @@ router.get('/listado_productos', (req, res) => {
 });
 
 router.get('/landing', (req, res) => {
-    
+
     fetch('https://fakestoreapi.com/products?limit=3')
-    .then(res => res.json())
-    .then(json => {
-        let productos=json
-        res.render('landing', {
-            mascomprados : productos
+        .then(res => res.json())
+        .then(json => {
+            let productos = json
+            res.render('landing', {
+                mascomprados: productos
+            })
         })
-    })
-   
+
 });
 
-mongoose.connect('mongodb+srv://albertmota28:5Y6Nhirv9eeQ7jlZ@clusteradso2557466.htke3tm.mongodb.net/')
+router.post('/newPersona', async (req, res) => {
+    console.log(req.body);
+    let aprendiz = new modelopersona({
+        email: req.body.correoRegistro,
+        nombre: req.body.nombreRegistro,
+        usuario: req.body.usuarioRegistro,
+        contrasena: req.body.contrasenaRegistro,
+    });
+    await aprendiz.save()
+        .then(doc => {
+            console.log(doc)
+            res.send('<h2>Insertado</h2>')
+            res.end();
+        })
+        .catch(err => {
+            console.error(err)
+            res.send('<h2>Error</h2>')
+            res.end();
+        })
+
+})
+
+router.get('/listarPersonas', async (req, res) => {
+    modelopersona
+        .find({})
+        .then(doc => {
+            console.log(doc);
+            res.render('listarPersonas', {
+                personasListadas: doc
+            })
+        })
+        .catch(err => {
+            console.error(err)
+            res.send('<h2>Error</h2>')
+            res.end();
+        })
+});
 
 module.exports = router
