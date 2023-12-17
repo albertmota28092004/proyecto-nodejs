@@ -112,21 +112,21 @@ router.post('/newPersona', async (req, res) => {
     let aprendiz = new modelopersona({
         email: req.body.correoRegistro,
         nombre: req.body.nombreRegistro,
+        documento: req.body.documentoRegistro,
+        telefono: req.body.telefonoRegistro,
         usuario: req.body.usuarioRegistro,
         contrasena: req.body.contrasenaRegistro,
     });
     await aprendiz.save()
         .then(doc => {
             console.log(doc)
-            res.send('<h2>Insertado</h2>')
-            res.end();
+            res.redirect('/listarPersonas');
         })
         .catch(err => {
             console.error(err)
             res.send('<h2>Error</h2>')
             res.end();
         })
-
 })
 
 router.get('/listarPersonas', async (req, res) => {

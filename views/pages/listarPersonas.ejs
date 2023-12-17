@@ -1,34 +1,63 @@
 <%- include('../partials/encabezado'); %>
 <%- include('../partials/navbar'); %>
 
-
 <style>
-    tr,td{
-        border:2px solid red;
+    tr, td {
+        border: 2px solid black;
     }
 </style>
 <body>
     <div class="container mt-3">
-        <table class="table table-striped">
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="searchInput" style="font-weight: bold;">Buscar por nombre:</label>
+                <input type="text" class="form-control" id="searchInput" name="searchInput" placeholder="Ingrese el nombre">
+            </div>
+        </form>
+
+        <table class="table table-striped mt-3">
             <thead>
                 <th>Nombre</th>
-                <th>Correo</th>
+                <th>Correo</th>                
+                <th>Documento</th>
+                <th>Teléfono</th>
                 <th>Usuario</th>
                 <th>Contraseña</th>
             </thead>
             <tbody>
-        <% personasListadas.forEach(persona => { %>
-                <tr>
-                    <td><%=persona.nombre%></td>
-                    <td><%=persona.email%></td>
-                    <td><%=persona.usuario%></td>
-                    <td><%=persona.contrasena%></td>
-                </tr>
-    
-        <%})%>
+                <% personasListadas.forEach(persona => { %>
+                    <tr>
+                        <td><%=persona.nombre%></td>
+                        <td><%=persona.email%></td>
+                        <td><%=persona.documento%></td>
+                        <td><%=persona.telefono%></td>
+                        <td><%=persona.usuario%></td>
+                        <td><%=persona.contrasena%></td>
+                    </tr>
+                <% }) %>
             </tbody>
         </table>
     </div>
-    
 
-<%- include('../partials/footer'); %>
+    <%- include('../partials/footer'); %>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', searchByName);
+
+        function searchByName() {
+            const inputValue = searchInput.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const nameColumn = row.querySelector('td:first-child').textContent.toLowerCase();
+
+                if (nameColumn.includes(inputValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
