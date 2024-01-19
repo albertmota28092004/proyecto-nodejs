@@ -6,10 +6,6 @@ const modelopersona = require('../models/persona.model');
 const mongoose = require("../config/database");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const multer = require('multer');
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
-const fs = require('fs');
 
 router.use(cookieParser());
 router.use(session({
@@ -147,19 +143,8 @@ router.get('/landing', (req, res) => {
 
 /*--------------------------Ingreso de datos---------------------------*/
 
-router.post('/newPersona', upload.single('imagenRegistro'), async (req, res) => {
+router.post('/newPersona', async (req, res) => {
     console.log(req.body);
-
-    let imagenPorDefectoBuffer;
-
-    // Lee el contenido de la imagen por defecto desde el sistema de archivos
-    try {
-        const imagePath = path.join(__dirname, '../static/img/imagen_base_usuario.webp');
-        imagenPorDefectoBuffer = fs.readFileSync(imagePath);
-    } catch (error) {
-        console.error('Error al leer la imagen por defecto', error);
-        return res.status(500).send('Error interno del servidor');
-    }
 
     let aprendiz = new modelopersona({
         email: req.body.correoRegistro,
@@ -167,8 +152,7 @@ router.post('/newPersona', upload.single('imagenRegistro'), async (req, res) => 
         documento: req.body.documentoRegistro,
         telefono: req.body.telefonoRegistro,
         usuario: req.body.usuarioRegistro,
-        contrasena: req.body.contrasenaRegistro,
-        imagen: req.file ? req.file.buffer : imagenPorDefectoBuffer
+        contrasena: req.body.contrasenaRegistro
     });
     await aprendiz.save()
         .then(doc => {
@@ -181,27 +165,8 @@ router.post('/newPersona', upload.single('imagenRegistro'), async (req, res) => 
             res.send('<h2>Error</h2>')
             res.end();
         })
-
 })
 
-router.post('/iniciarSesion', async (req, res) => {
-    const { usuarioInicio, contrasenaInicio } = req.body;
-
-    try {
-        const persona = await modelopersona.findOne({ usuario: usuarioInicio, contrasena: contrasenaInicio });
-
-        if (persona) {
-            req.session.usuario = persona.usuario;
-            res.redirect('/');
-        } else {
-            // Credenciales incorrectas
-            res.send('<h2>Credenciales incorrectas</h2>');
-        }
-    } catch (error) {
-        console.error(error);
-        res.send('<h2>Error en el servidor</h2>');
-    }
-});
 
 
 router.get('/listarPersonas', async (req, res) => {
@@ -225,37 +190,10 @@ router.get('/cerrarSesion', (req, res) => {
         if (err) {
             console.error(err);
         } else {
-            res.redirect('/');
+            res.redirect('/iniciarSesion');
         }
     });
 });
-
-// Ruta para obtener la imagen por ID
-router.get('/api/obtener-imagen/:usuario', async (req, res) => {
-    try {
-        // Busca el registro en la base de datos por ID
-        const persona = await modelopersona.findById(req.params.usuario);
-
-        if (!persona) {
-            return res.status(404).send('Imagen no encontrada');
-        }
-
-        // Decodifica la imagen desde base64
-        const imagenBase64 = persona.imagen.buffer.toString('base64');
-        const imagenBinaria = Buffer.from(imagenBase64, 'base64');
-
-        // Envia la imagen como respuesta
-        res.set('Content-Type', 'image/png'); // Ajusta el tipo de contenido según el formato de tu imagen
-        res.send(imagenBinaria);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error interno del servidor');
-    }
-});
-
-
-
-
 
 
 

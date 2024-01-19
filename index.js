@@ -6,10 +6,6 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const multer = require('multer');
-// Configurar Multer para gestionar la carga de archivos
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false})); 
@@ -38,16 +34,6 @@ app.set('views', path.join(__dirname, './views/pages'));
 
 // Conectar el archivo de rutas
 app.use('', require('./routes/route'))
-
-
-
-app.post('/api/guardar-imagen', upload.single('imagen'), (req, res) => {
-    const imagenData = req.file;
-    // req.file contiene la información del archivo
-
-    // Devolver una respuesta al cliente
-    res.json({ mensaje: 'Imagen guardada exitosamente' });
-});
 
 // Establecer el puerto donde se ejecutará 
 app.listen(9100, () => {

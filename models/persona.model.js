@@ -1,8 +1,8 @@
 const mongoose = require("../config/database");
 const Persona = new mongoose.Schema({
-  email: {  
+  email: {
     type: String,
-    unique: [true, 'Debe registrar email'] 
+    unique: [true, 'Debe registrar email']
   },
   nombre: {
     type: String,
@@ -30,11 +30,7 @@ const Persona = new mongoose.Schema({
   contrasena: {
     type: String,
     required: true
-  },
-  imagen: 
-  { type: Buffer
   }
-
 });
 
 const modelopersona = mongoose.model("persona", Persona);

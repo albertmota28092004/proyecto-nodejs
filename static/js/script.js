@@ -264,22 +264,39 @@ function mostrar(numero) {
   }
 }
 
-function enviarImagen() {
-  var input = document.getElementById('inputImagen');
-  var formData = new FormData();
-  formData.append('imagen', input.files[0]);
-
-  fetch('/api/guardar-imagen', {
-    method: 'POST',
-    body: formData
-  })
+function fetchDepartments(id) {
+  fetch(`https://api-colombia.com/api/v1/Department`)
     .then(response => response.json())
     .then(data => {
-      console.log('Imagen guardada exitosamente:', data);
-      // Puedes realizar acciones adicionales, como actualizar la interfaz de usuario.
-    })
-    .catch(error => console.error('Error al guardar la imagen:', error));
+      data.forEach(department => {
+        createListDepartments(department);
+      });
+    });
 }
+
+function createListDepartments(department) {
+  let departmentsContainer = document.getElementById('departments');
+  let listContainer = document.createElement("div");
+  listContainer.classList.add('list-container')
+
+  let name = document.createElement("h3");
+  name.textContent = department.name
+
+  let description = document.createElement('p');
+  description.textContent = department.description
+
+  let municipalities = document.createElement('p');
+  municipalities.textContent = `Municipios: ${department.municipalities}`
+
+  listContainer.appendChild(name);
+  listContainer.appendChild(description);
+  listContainer.appendChild(municipalities);
+
+  departmentsContainer.appendChild(listContainer)
+}
+
+/*-----------Imagen registro--------------*/
+
 
 function mostrarImagen() {
   var input = document.getElementById('inputImagen');
@@ -295,20 +312,4 @@ function mostrarImagen() {
     reader.readAsDataURL(input.files[0]);
   }
 }
-function mostrarImagen() {
-            var input = document.getElementById('inputImagen');
-            var preview = document.getElementById('imagenPreview');
 
-            // Verificar si se seleccionó un archivo
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    // Asignar la URL de la imagen al fondo del div
-                    preview.style.backgroundImage = 'url(' + e.target.result + ')';
-                };
-
-                // Leer el contenido del archivo como una URL de datos
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
