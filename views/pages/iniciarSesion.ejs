@@ -27,17 +27,17 @@
         <!--Formulario de login y registro-->
         <div class="contenedor__login-register">
             <!--Login-->
-            <form action="" class="formulario__login">
+            <form action="/iniciarSesion" class="formulario__login" method="post">
                 <h2>Iniciar sesión</h2>
-                <input id="usuario" type="text" placeholder="Nombre de usuario" required>
-                <input type="password" id="contrasenaInicio" placeholder="Contraseña" required>
+                <input id="usuario" type="text" placeholder="Nombre de usuario" name="usuarioInicio" required>
+                <input type="password" id="contrasenaInicio" placeholder="Contraseña" name="contrasenaInicio" required>
                 <button type="button"
                     style="position: absolute; display: inline; margin-top: -43px; margin-left: 270px; background-color: transparent; color: black;"
                     id="btnMostrarContrasenaInicio" onclick="toggleMostrarContrasenaInicio()">
                     <span id="iconoMostrarInicio" class="bi bi-eye-fill"></span>
                     <span id="iconoOcultarInicio" class="bi bi-eye-slash-fill"></span>
                 </button>
-                <button class="entrar" type="submit" onclick="validarUsuario()" class="btn">Entrar</button>
+                <button class="entrar" type="submit" class="btn">Entrar</button>
             </form>
             <!--Registro-->
             <form action="/newPersona" method="POST" class="formulario__register">

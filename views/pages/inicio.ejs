@@ -3,6 +3,10 @@
 
     <title><%=titulo   %></title>
 
+    <% if (session) { %>
+        <img src="/api/obtener-imagen/{{usuario}}" alt="Imagen de perfil">
+    <% } %>
+
     <main>
         <section>
             <img id="banner" src="img/banner_renovado.png" alt="banner_original">

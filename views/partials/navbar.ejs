@@ -40,8 +40,11 @@
                 <div>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a id="boton_registrarse" class="nav-link btn"
-                                href="/iniciarSesion">Registrarse</a>
+                            <% if (session) { %>
+                                <a class="btn boton_navbar" class="nav-link btn" href="/cerrarSesion">Cerrar Sesión</a>
+                            <% } else { %>
+                                <a class="btn boton_navbar" class="nav-link btn" href="/iniciarSesion">Registrarse</a>
+                            <% } %>
                         </li>
                         <li id="menu_hamburguesa" class="nav-item">
                             <button class="barra nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo"><i

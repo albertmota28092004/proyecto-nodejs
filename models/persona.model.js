@@ -30,6 +30,9 @@ const Persona = new mongoose.Schema({
   contrasena: {
     type: String,
     required: true
+  },
+  imagen: 
+  { type: Buffer
   }
 
 });

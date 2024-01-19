@@ -1,0 +1,18 @@
+<%- include('../partials/encabezado'); %>
+<%- include('../partials/navbar'); %>
+
+<title><%=titulo   %></title>
+
+    <div class="agregarimagen__contenedor">
+        <h1>¡Agrega una imagen para tu perfil!</h1>
+        <h4>Queremos conocer un poco más sobre ti.</h4>
+        <div class="selector_imagen">
+            <div class="imagen_registro" id="imagenPreview">
+                
+            </div>
+            <input name="imagenRegistro" type="file" id="inputImagen" onchange="mostrarImagen()">
+        </div>
+        <a class="btn boton_navbar" href="/" style="background-color: #8F82B7; margin-top: 15px; color: #FFFFFF;">Continuar</a>
+    </div>
+
+<%- include('../partials/footer'); %>
