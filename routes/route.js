@@ -167,7 +167,26 @@ router.post('/newPersona', async (req, res) => {
         })
 })
 
-
+router.post('/iniciarSesion', async (req, res) => {
+    const { usuarioInicio, contrasenaInicio } = req.body;
+    try {
+        const personaEncontrada = await modelopersona.findOne({ usuario: usuarioInicio });
+        if (personaEncontrada) {
+            const contrasenaValida = (contrasenaInicio === personaEncontrada.contrasena);
+            if (contrasenaValida) {
+                req.session.usuario = usuarioInicio;
+                res.redirect('/');
+            } else {
+                res.send('<h2>Contraseña incorrecta</h2>');
+            }
+        } else {
+            res.send('<h2>Usuario no registrado</h2>');
+        }
+    } catch (error) {
+        console.error(error);
+        res.send('<h2>Error en el inicio de sesión</h2>');
+    }
+});
 
 router.get('/listarPersonas', async (req, res) => {
     modelopersona
